@@ -55,7 +55,7 @@ public class Service1Controller {
         );
 
         String hello = helloResponse.getBody();
-        // POST call to Service 3 (Include Trace ID in Headers)
+        // POST call to Service 3 
         HttpEntity<NameDto> postRequestEntity = new HttpEntity<>(nameDto, headers);
         ResponseEntity<String> fullNameResponse = restTemplate.exchange(
                 "http://localhost:8082/service3/concatNames",
