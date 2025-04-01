@@ -48,17 +48,25 @@ public class Service1Controller {
         // GET call to Service 2
         HttpEntity<Void> getRequestEntity = new HttpEntity<>(headers);
         ResponseEntity<String> helloResponse = restTemplate.exchange(
-                "http://localhost:8081/service2/hello",
+               // "http://Task1_Service2/service2/hello",
+                "http://TASK1_SERVICE2/service2/hello",
                 HttpMethod.GET,
                 getRequestEntity,
                 String.class
         );
 
         String hello = helloResponse.getBody();
+        /*
+        String url = "http://TASK1_SERVICE2/service2/hello";  // Eureka will resolve the hostname
+        String hello = restTemplate.getForObject(url, String.class);
+        */
+
+
         // POST call to Service 3 (Include Trace ID in Headers)
         HttpEntity<NameDto> postRequestEntity = new HttpEntity<>(nameDto, headers);
         ResponseEntity<String> fullNameResponse = restTemplate.exchange(
-                "http://localhost:8082/service3/concatNames",
+                "http://Task1_Service3/service3/concatNames",
+
                 HttpMethod.POST,
                 postRequestEntity,
                 String.class
