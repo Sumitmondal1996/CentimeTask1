@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(JsonParsingExRemove-Item -Recurse -Force .git
-            ception.class)
+    @ExceptionHandler(JsonParsingException.class)
+
     public ResponseEntity<String>  handleJsonParsingException(JsonParsingException jsonParsingException) {
         System.out.println("Result  " + jsonParsingException.getAttr()==null?1:0);
         String message = ( jsonParsingException.getAttr() + " value can't be null");
